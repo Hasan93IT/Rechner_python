@@ -33,4 +33,4 @@ python -m unittest discover -v
 
 Die GitHub-Action `.github/workflows/ci.yml` läuft bei jedem Push, jedem Pull
 Request und manuell. Sie prüft die Syntax aller Python-Dateien und führt die
-Unit-Tests aus — auf Ubuntu und Windows mit Python 3.9 bis 3.13.
+Unit-Tests aus — auf Windows mit Python 3.9 bis 3.13.
