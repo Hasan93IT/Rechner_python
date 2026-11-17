@@ -1,7 +1,9 @@
 """Reine Rechenlogik des Taschenrechners — ohne GUI-Abhängigkeiten."""
 
+from __future__ import annotations
+
 import math
-from typing import Callable, Optional
+from collections.abc import Callable
 
 ERROR = "Fehler"
 OPERATORS = frozenset("+-*/")
@@ -12,10 +14,10 @@ PRECISION = 10
 class Calculator:
     """Hält den Zustand einer Rechnung und meldet Anzeige-Änderungen."""
 
-    def __init__(self, on_change: Optional[Callable[[str], None]] = None) -> None:
+    def __init__(self, on_change: Callable[[str], None] | None = None) -> None:
         self._on_change = on_change
-        self._accumulator: Optional[float] = None
-        self._operator: Optional[str] = None
+        self._accumulator: float | None = None
+        self._operator: str | None = None
         self._awaiting_operand = True
         self._display = "0"
 

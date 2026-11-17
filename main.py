@@ -1,8 +1,8 @@
 """tkinter-Oberfläche für den einfachen Taschenrechner."""
 
 import tkinter as tk
+from collections.abc import Callable
 from functools import partial
-from typing import Callable, Dict
 
 from calculator import OPERATORS, Calculator
 
@@ -94,7 +94,7 @@ class CalculatorApp(tk.Tk):
         if label in OPERATORS:
             return partial(self._calculator.press_operator, label)
 
-        commands: Dict[str, Callable[[], None]] = {
+        commands: dict[str, Callable[[], None]] = {
             "C": self._calculator.clear,
             "⌫": self._calculator.backspace,
             "±": self._calculator.toggle_sign,

@@ -42,9 +42,9 @@ class CalculatorTests(unittest.TestCase):
     def test_grundrechenarten(self) -> None:
         for tokens, expected in (
             (("7", "+", "8", "="), "15"),
-            ("9 - 4 =".split(), "5"),
-            ("6 * 7 =".split(), "42"),
-            ("8 / 2 =".split(), "4"),
+            (("9", "-", "4", "="), "5"),
+            (("6", "*", "7", "="), "42"),
+            (("8", "/", "2", "="), "4"),
         ):
             with self.subTest(tokens=tokens):
                 self.assertEqual(self.enter(*tokens), expected)
